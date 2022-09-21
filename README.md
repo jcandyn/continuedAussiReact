@@ -11,6 +11,6 @@ Loneliness is more dangerous than smoking 15 cigarettes a day, and more closely 
 
 ### Check out the deployed version here: https://friendship-cure.herokuapp.com/
 
-### Contributors:
-Joscandy Nunez and Jasmin Bragg
+### Contributor:
+Joscandy Nunez
 
