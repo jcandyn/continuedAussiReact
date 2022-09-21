@@ -1,0 +1,528 @@
+/*.root {
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 20px;
+    color: #203152;
+    background-color: #f5a623;
+    padding: 20px;
+    box-shadow: 0 4px 4px #808888;
+    flex-direction: row;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+}
+
+.viewLoading {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icLogout {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.icProfile {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    margin-right: 80px;
+    cursor: pointer;
+}
+
+/* Dialog confirm */
+
+/*
+.viewCoverScreen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewWrapTextDialogConfirmLogout {
+    width: 300px;
+    height: 50px;
+    background-color: #f5a623;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.titleDialogConfirmLogout {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.viewWrapButtonDialogConfirmLogout {
+    flex-direction: row;
+    height: 100px;
+    width: 300px;
+    min-width: 300px;
+    background-color: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.btnYes {
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    margin-right: 20px;
+    background-color: #203152;
+    border: 0px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btnNo {
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 5px;
+    background-color: #dd4b39;
+    border: 0px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* List user */
+
+/*
+.viewListUser {
+    overflow-y: scroll;
+    max-height: 90vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.viewListUser::-webkit-scrollbar-track {
+    padding: 2px 0;
+    background-color: #e8e8e8;
+}
+
+.viewListUser::-webkit-scrollbar {
+    width: 6px;
+}
+
+.viewListUser::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #203152;
+}
+
+.viewWrapItem {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    width: 330px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewWrapItemFocused {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    background-color: #e8e8e8;
+    width: 330px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewAvatarItem {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.viewWrapContentItem {
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+    margin-left: 15px;
+    color: #203152;
+    word-wrap: break-word;
+}
+
+.textItem {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 240px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.viewBoard {
+    display: flex;
+    flex: 1;
+    max-height: 90vh;
+}
+
+/*  */
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,600");
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100vh;
+}
+
+body {
+	background-size: 200%;
+	background-image: linear-gradient(to right, #874da2 0%, #c43a30 49%, #fe9a8b 100%);
+	animation: background 15s ease infinite;
+	margin: 0;
+	font-family: "Lato", sans-serif;
+	color: #874da2;
+}
+
+.Chat {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	height: 100vh;
+}
+
+.Profile {
+	z-index: 5;
+	box-shadow: 0 0.8rem 3rem rgba(135, 77, 162, 0.6);
+	border-radius: 1rem;
+	background: #fdfbfb;
+	width: 30vw;
+	display: flex;
+	flex-direction: column;
+	margin: 5vh 0 5vh 0;
+	overflow-y: scroll;
+}
+
+.Profile h1,
+  .Profile .email {
+	text-align: center;
+	color: #fdfbfb;
+}
+
+.Profile h1 {
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+
+.Profile .profileImage.main {
+	width: 6rem;
+	height: 6rem;
+	margin: 5vh auto 10vh auto;
+}
+
+.Profile .top-half {
+	display: block;
+	flex: none;
+	padding-top: 5vh;
+	border-radius: 1rem 1rem 0 0;
+	display: flex;
+	flex-direction: column;
+	background: #ea6982;
+	background-image: url("https://zephyo.github.io/22Days/code/7/graphics/clouds.svg"), linear-gradient(0deg, #fe9a8b, #ea6982);
+	background-size: cover;
+	background-position: bottom;
+}
+
+.profileImage {
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.icons {
+	display: flex;
+	justify-content: stretch;
+	align-items: center;
+}
+
+.icons a {
+	flex: auto;
+	color: #f9748f;
+	position: relative;
+	padding: 2vh;
+}
+
+.icons a svg {
+	width: 100%;
+}
+
+.icons a.active:after {
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: 0.8vh;
+	background: #f9748f;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.prev-chats {
+	flex: 1 1 auto;
+	margin: 1rem 2rem 0 2rem;
+	overflow-y: scroll;
+}
+
+.prev-chat {
+	display: grid;
+	grid-template-columns: 4.2rem 1fr;
+	grid-template-rows: 2.1rem;
+	grid-column-gap: 1.5rem;
+	grid-template-areas: "pic header" "pic text";
+	justify-items: stretch;
+	align-items: stretch;
+	margin: 1rem 0 1rem 0;
+	line-height: 2.5rem;
+}
+
+.prev-chat .profileImage {
+	background: linear-gradient(90deg, #ea6982, #fe9a8b);
+	grid-area: pic;
+	width: 4.2rem;
+	height: 4.2rem;
+	padding: 0.2rem;
+	margin: 0.3rem;
+}
+
+.prev-chat:first-child h2 {
+	color: #874da2;
+}
+
+.prev-chat h2 {
+	font-weight: 600;
+	grid-area: header;
+	color: #ea6982;
+}
+
+.prev-chat p {
+	grid-area: text;
+	color: #fe9a8b;
+	text-overflow: fade;
+	white-space: nowrap;
+}
+
+.Conversation {
+	padding-right: 0.5rem;
+	position: relative;
+	box-shadow: 0 0.8rem 3rem rgba(135, 77, 162, 0.6);
+	border-radius: 1rem 0 0 1rem;
+	background: white;
+	margin: 12vh 0 12vh 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.Conversation svg {
+	color: #ea6982;
+}
+
+.Conversation button {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.Conversation header {
+	flex: none;
+	display: flex;
+	height: 3rem;
+	align-items: center;
+	position: relative;
+}
+
+.Conversation header .name {
+	flex: auto;
+	text-align: center;
+}
+
+.Conversation header svg {
+	position: absolute;
+	margin-left: 0.8rem;
+}
+
+.Conversation .container {
+	flex: auto;
+	width: 28rem;
+	overflow-y: scroll;
+}
+
+.Conversation .container .Messages {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+}
+
+.Conversation .container .Messages .Message {
+	margin: 0.5rem 0.8rem 0.5rem 0.8rem;
+	max-width: 70%;
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.Conversation .container .Messages .Message.you {
+	align-self: flex-end;
+	align-items: flex-end;
+}
+
+.Conversation .container .Messages .Message.you span {
+	border-radius: 1rem 0rem 1rem 1rem;
+	background: #874da2;
+	color: #fdfbfb;
+}
+
+.Conversation .container .Messages .Message.them span {
+	border-radius: 0 1rem 1rem 1rem;
+	background: #fdfbfb;
+}
+
+.Conversation .container .Messages .Message span {
+	padding: 1rem;
+	box-shadow: 0.5rem 0.7rem 4rem rgba(135, 77, 162, 0.4);
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
+}
+
+.Conversation .container .Messages .Message p {
+	margin-top: 1rem;
+	display: inline-block;
+	color: #f9748f;
+}
+
+.Conversation .container .Messages .Message:last-child {
+	margin-bottom: 2rem;
+}
+
+.messageInput {
+	background: transparent;
+	font-size: 0.9rem;
+}
+
+input {
+	border: none;
+	padding: 1.5rem;
+	color: #874da2;
+}
+
+input::placeholder {
+	color: #ea6982;
+}
+
+
+.LoginForm .sign-up .input {
+	display: block;
+	position: relative;
+}
+
+.LoginForm .sign-up .input:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 0.3vh;
+	background: linear-gradient(90deg, #ea6982, #fe9a8b);
+}
+
+.LoginForm .sign-up .input svg {
+	height: 3vh;
+	position: absolute;
+	top: 35%;
+	right: 0.5rem;
+	background: transparent;
+}
+
+.LoginForm .sign-up input {
+	display: block;
+	padding: 3.5vh;
+	font-size: 2.5vh;
+	background: transparent;
+	position: relative;
+}
+
+.LoginForm .sign-up button {
+	flex: none;
+	font-size: 2.3vh;
+	width: 70%;
+	color: #fdfbfb;
+	font-weight: 600;
+	margin-top: 5vh;
+	border-radius: 1rem;
+	background: linear-gradient(90deg, #ea6982 45%, #fe9a8b 130%);
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes background {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
